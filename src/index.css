@@ -1,11 +1,14 @@
+/* Google Fonts — carregadas via preconnect no index.html */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
-  --font-display: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
-  --font-baloo: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+  /* Fontes */
+  --font-sans: 'Baloo 2', 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --font-display: 'Baloo 2', 'Fredoka', system-ui, sans-serif;
+  --font-baloo: 'Baloo 2', 'Fredoka', system-ui, sans-serif;
 
+  /* Cores MeliMelo */
   --color-meli-orange: #FFB347;
   --color-meli-pink: #FF6B8A;
   --color-meli-blue: #7EC8E3;
@@ -14,47 +17,157 @@
   --color-meli-dark: #3D3D3D;
 }
 
+/* ——————————————————————
+   Base
+—————————————————————— */
 @layer base {
-  body {
-    @apply font-sans bg-transparent text-meli-dark antialiased;
-    overflow-x: hidden;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
-  
+
+  html {
+    /* Evita layout shift e overflow horizontal */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: var(--color-meli-cream);
+  }
+
+  body {
+    @apply font-sans text-meli-dark antialiased;
+    overflow-x: hidden;
+    min-height: 100dvh;
+    /* Evita CLS causado por scrollbar */
+    scrollbar-gutter: stable;
+  }
+
+  /* Seleção de texto */
+  ::selection {
+    background-color: var(--color-meli-pink);
+    color: #fff;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-wide;
+    /* Evita overflow de texto em títulos grandes */
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  img {
+    /* Evita layout shift de imagens sem dimensões explícitas */
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Foco acessível — visível apenas via teclado */
+  :focus-visible {
+    outline: 3px solid var(--color-meli-orange);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
   }
 }
 
-/* Premium utilities */
+/* ——————————————————————
+   Utilitários premium
+—————————————————————— */
 @layer utilities {
+  /* Glass effects — unificados para evitar CSS conflitante */
   .glass {
-    background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(12px); 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
   }
+
   .glass-premium {
-    background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(12px); 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
   }
+
   .glass-card {
-    background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(12px); 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     @apply shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1;
   }
+
+  /* Efeitos de texto e elementos */
   .text-glow {
-    text-shadow: 0 0 20px rgba(255,107,138,0.3);
+    text-shadow: 0 0 20px rgba(255, 107, 138, 0.3);
   }
+
   .element-glow {
-    box-shadow: 0 0 30px rgba(126,200,227,0.4);
+    box-shadow: 0 0 30px rgba(126, 200, 227, 0.4);
   }
-  .floating-blob {
-    @apply absolute rounded-full blur-[80px] -z-10 opacity-40 mix-blend-multiply;
-    will-change: transform, opacity;
-  }
+
   .glow-orange {
     filter: drop-shadow(0 0 15px rgba(255, 179, 71, 0.4));
   }
+
+  /* Floating blobs decorativos */
+  .floating-blob {
+    @apply absolute rounded-full blur-[80px] -z-10 opacity-30 mix-blend-multiply pointer-events-none;
+    will-change: transform;
+  }
+
+  /* Previne overflow horizontal em containers */
+  .safe-container {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Imagens de personagens sem layout shift */
+  .char-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* GPU acelerada mas sem consumir memória ao sair */
+    will-change: auto;
+  }
+
+  /* Scrollbar estilizada */
+  .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 138, 0.3);
+    border-radius: 10px;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 138, 0.6);
+  }
 }
 
+/* ——————————————————————
+   Animações globais leves
+—————————————————————— */
+@layer utilities {
+  /* Prefere animações reduzidas para acessibilidade */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
