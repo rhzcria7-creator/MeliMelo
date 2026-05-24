@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+  --font-display: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+  --font-baloo: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+
+  --color-meli-orange: #FFB347;
+  --color-meli-pink: #FF6B8A;
+  --color-meli-blue: #7EC8E3;
+  --color-meli-green: #81C784;
+  --color-meli-cream: #FFF9F0;
+  --color-meli-dark: #3D3D3D;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-transparent text-meli-dark antialiased;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wide;
+  }
+}
+
+/* Premium utilities */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    @apply shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1;
+  }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255,107,138,0.3);
+  }
+  .element-glow {
+    box-shadow: 0 0 30px rgba(126,200,227,0.4);
+  }
+  .floating-blob {
+    @apply absolute rounded-full blur-[80px] -z-10 opacity-40 mix-blend-multiply;
+    will-change: transform, opacity;
+  }
+  .glow-orange {
+    filter: drop-shadow(0 0 15px rgba(255, 179, 71, 0.4));
+  }
+}
+

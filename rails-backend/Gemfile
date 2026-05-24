@@ -1,0 +1,23 @@
+source "https://rubygems.org"
+ruby "3.3.0"
+
+gem "rails", "~> 7.1.3"
+gem "pg", "~> 1.1" # PostgreSQL
+gem "puma", ">= 5.0"
+gem "bootsnap", require: false
+
+# Google APIs
+gem 'google-api-client', '~> 0.53.0'
+
+group :development, :test do
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rspec-rails"
+end
+
+group :development do
+  gem "web-console"
+end
+
+gem "rack-cors"
+gem "bcrypt", "~> 3.1.7" # Hardening
+gem "rack-attack" # Security & Rate limiting
