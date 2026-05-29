@@ -1,17 +1,859 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="MeliMelo | Universo Mágico" />
-    <meta property="og:description" content="Um universo maravilhoso para crianças" />
-    <meta property="og:image" content="/assets/personagens/logo.png" />
-    <link rel="icon" href="/assets/personagens/logo.png" />
-    <title>MeliMelo | Universo Mágico</title>
+    <meta name="description" content="Eduardo's Auto Elétrico & Mecânica em Guarulhos: auto elétrico, diagnóstico eletrônico, ar condicionado, bateria, motor de arranque, alternador e injeção eletrônica." />
+    <meta name="keywords" content="auto elétrico Guarulhos, mecânica Guarulhos, diagnóstico eletrônico, bateria, alternador, motor de arranque, ar condicionado automotivo, injeção eletrônica" />
+    <meta name="author" content="Eduardo's Auto Elétrico & Mecânica" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Eduardo's Auto Elétrico & Mecânica | Guarulhos" />
+    <meta property="og:description" content="Seu carro parou? Diagnóstico preciso, serviço rápido e preço justo em Guarulhos." />
+    <meta property="og:type" content="business.business" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://eduardos-auto-eletrico.com.br" />
+    <meta name="theme-color" content="#1a237e" />
+    <title>Eduardo's Auto Elétrico & Mecânica | Oficina em Guarulhos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Slab:wght@600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Eduardo's Auto Elétrico & Mecânica",
+        "description": "Oficina mecânica e auto elétrica em Guarulhos especializada em diagnóstico eletrônico, ar condicionado, bateria, motor de arranque, alternador e injeção eletrônica.",
+        "telephone": "+55 11 98073-4554",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Taubaté, 257",
+          "addressLocality": "Guarulhos",
+          "addressRegion": "SP",
+          "postalCode": "07161-180",
+          "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "14:00"
+          }
+        ],
+        "areaServed": "Guarulhos, São Paulo",
+        "priceRange": "$$",
+        "sameAs": ["https://wa.me/5511980734554"]
+      }
+    </script>
+    <style>
+      :root {
+        --blue-900: #1a237e;
+        --blue-800: #283593;
+        --blue-400: #42a5f5;
+        --orange: #ff9800;
+        --white: #fff;
+        --gray-900: #263238;
+        --gray-700: #455a64;
+        --gray-100: #f4f7fb;
+        --shadow: 0 18px 45px rgba(26, 35, 126, 0.16);
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: var(--gray-900);
+        background: var(--white);
+        font-family: "Roboto", Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      img,
+      svg {
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section-heading {
+        max-width: 760px;
+        margin: 0 auto 36px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+        color: var(--orange);
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Roboto Slab", Georgia, serif;
+        line-height: 1.15;
+      }
+
+      h2 {
+        color: var(--blue-900);
+        font-size: clamp(2rem, 7vw, 3rem);
+      }
+
+      p {
+        color: var(--gray-700);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 52px;
+        padding: 14px 20px;
+        border: 0;
+        border-radius: 999px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 26px rgba(0, 0, 0, 0.22);
+      }
+
+      .btn-primary {
+        color: var(--white);
+        background: var(--orange);
+      }
+
+      .btn-secondary {
+        color: var(--blue-900);
+        background: var(--white);
+      }
+
+      .topbar {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 18px 0;
+        color: var(--white);
+      }
+
+      .topbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Roboto Slab", Georgia, serif;
+        font-size: 1rem;
+        font-weight: 900;
+      }
+
+      .brand-icon {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 2px solid rgba(255, 255, 255, 0.48);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .topbar-phone {
+        display: none;
+        align-items: center;
+        gap: 8px;
+        color: var(--white);
+        font-weight: 900;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 760px;
+        padding: 118px 0 70px;
+        color: var(--white);
+        background:
+          radial-gradient(circle at 84% 18%, rgba(66, 165, 245, 0.58), transparent 28%),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 22px),
+          linear-gradient(145deg, var(--blue-900), var(--blue-800) 56%, #11184f);
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(115deg, transparent 0 48%, rgba(255, 255, 255, 0.14) 48% 49%, transparent 49% 100%),
+          radial-gradient(circle at 12% 88%, rgba(255, 152, 0, 0.22), transparent 30%);
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .hero-copy h1 {
+        max-width: 900px;
+        margin-bottom: 20px;
+        color: var(--white);
+        font-size: clamp(2.35rem, 11vw, 5rem);
+      }
+
+      .hero-copy p {
+        max-width: 680px;
+        margin-bottom: 28px;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 1.12rem;
+      }
+
+      .hero-actions {
+        display: grid;
+        gap: 14px;
+      }
+
+      .hero-panel {
+        padding: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+        backdrop-filter: blur(16px);
+      }
+
+      .hero-panel-title {
+        margin-bottom: 18px;
+        color: var(--white);
+        font-size: 1.2rem;
+      }
+
+      .quick-list {
+        display: grid;
+        gap: 14px;
+        list-style: none;
+      }
+
+      .quick-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: rgba(255, 255, 255, 0.92);
+        font-weight: 700;
+      }
+
+      .quick-list i {
+        display: grid;
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--blue-900);
+        background: var(--blue-400);
+      }
+
+      .services {
+        background: var(--gray-100);
+      }
+
+      .services-grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      .service-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 280px;
+        padding: 26px;
+        border: 1px solid rgba(26, 35, 126, 0.08);
+        border-radius: var(--radius);
+        background: var(--white);
+        box-shadow: 0 10px 30px rgba(38, 50, 56, 0.07);
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .service-card:hover {
+        border-color: rgba(66, 165, 245, 0.62);
+        box-shadow: var(--shadow);
+        transform: translateY(-8px);
+      }
+
+      .service-icon {
+        display: grid;
+        width: 62px;
+        height: 62px;
+        margin-bottom: 18px;
+        place-items: center;
+        border-radius: 18px;
+        color: var(--white);
+        background: linear-gradient(135deg, var(--blue-900), var(--blue-400));
+        font-size: 1.65rem;
+      }
+
+      .service-card h3 {
+        margin-bottom: 10px;
+        color: var(--blue-900);
+        font-size: 1.35rem;
+      }
+
+      .service-card p {
+        margin-bottom: 22px;
+      }
+
+      .service-card .btn {
+        align-self: flex-start;
+        margin-top: auto;
+        min-height: 44px;
+        padding: 10px 16px;
+        color: var(--blue-900);
+        background: rgba(66, 165, 245, 0.14);
+      }
+
+      .trust-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px;
+        border: 1px solid rgba(26, 35, 126, 0.1);
+        border-radius: 20px;
+        background: var(--white);
+        box-shadow: 0 10px 28px rgba(38, 50, 56, 0.07);
+      }
+
+      .trust-badge i {
+        display: grid;
+        flex: 0 0 46px;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--orange);
+        font-size: 1.25rem;
+      }
+
+      .trust-badge strong {
+        display: block;
+        color: var(--blue-900);
+        font-size: 1.05rem;
+      }
+
+      .brands {
+        background: linear-gradient(180deg, var(--white), var(--gray-100));
+      }
+
+      .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .brand-logo {
+        display: grid;
+        min-height: 88px;
+        place-items: center;
+        border: 1px solid rgba(26, 35, 126, 0.1);
+        border-radius: 18px;
+        color: var(--blue-900);
+        background: var(--white);
+        box-shadow: 0 8px 18px rgba(38, 50, 56, 0.06);
+        font-family: "Roboto Slab", Georgia, serif;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .contact {
+        color: var(--white);
+        background: var(--gray-900);
+      }
+
+      .contact .section-heading h2,
+      .contact .section-heading p {
+        color: var(--white);
+      }
+
+      .contact-grid {
+        display: grid;
+        gap: 22px;
+      }
+
+      .contact-card,
+      .contact-form {
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.07);
+      }
+
+      .whatsapp-hero {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+        padding: 18px;
+        border-radius: 18px;
+        color: var(--white);
+        background: #25d366;
+        font-size: 1.15rem;
+        font-weight: 900;
+      }
+
+      .info-list {
+        display: grid;
+        gap: 16px;
+        margin-bottom: 22px;
+        list-style: none;
+      }
+
+      .info-list li {
+        display: flex;
+        gap: 12px;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .info-list i {
+        margin-top: 4px;
+        color: var(--orange);
+      }
+
+      .map-placeholder {
+        display: grid;
+        min-height: 220px;
+        place-items: center;
+        padding: 24px;
+        border: 2px dashed rgba(255, 255, 255, 0.28);
+        border-radius: 20px;
+        background:
+          linear-gradient(135deg, rgba(66, 165, 245, 0.22), rgba(255, 152, 0, 0.14)),
+          repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0 8px, transparent 8px 18px);
+        text-align: center;
+      }
+
+      .map-placeholder i {
+        margin-bottom: 10px;
+        color: var(--orange);
+        font-size: 2.3rem;
+      }
+
+      .contact-form h3 {
+        margin-bottom: 18px;
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+
+      .form-field {
+        margin-bottom: 14px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        color: rgba(255, 255, 255, 0.86);
+        font-weight: 700;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 14px;
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.1);
+        font: inherit;
+        outline: none;
+        transition: border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      textarea {
+        min-height: 124px;
+        resize: vertical;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: rgba(255, 255, 255, 0.54);
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--blue-400);
+        box-shadow: 0 0 0 4px rgba(66, 165, 245, 0.2);
+      }
+
+      .form-note {
+        margin-top: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.92rem;
+      }
+
+      .footer {
+        padding: 30px 0 90px;
+        color: rgba(255, 255, 255, 0.8);
+        background: #151f24;
+      }
+
+      .footer-content {
+        display: grid;
+        gap: 12px;
+      }
+
+      .footer strong {
+        color: var(--white);
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        z-index: 40;
+        right: 18px;
+        bottom: 18px;
+        display: grid;
+        width: 62px;
+        height: 62px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--white);
+        background: #25d366;
+        box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+        font-size: 2rem;
+        transition: transform 180ms ease;
+      }
+
+      .floating-whatsapp:hover {
+        transform: scale(1.08) rotate(4deg);
+      }
+
+      @media (min-width: 560px) {
+        .hero-actions {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .services-grid,
+        .trust-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 820px) {
+        .topbar-phone {
+          display: inline-flex;
+        }
+
+        .hero {
+          min-height: 720px;
+          padding-top: 132px;
+        }
+
+        .hero-grid {
+          grid-template-columns: minmax(0, 1.35fr) minmax(310px, 0.65fr);
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .trust-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .trust-badge {
+          display: block;
+          text-align: center;
+        }
+
+        .trust-badge i {
+          margin: 0 auto 14px;
+        }
+
+        .brands-grid {
+          grid-template-columns: repeat(7, 1fr);
+        }
+
+        .contact-grid {
+          grid-template-columns: 0.9fr 1.1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1.2fr 1fr 1.2fr;
+          align-items: center;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="hero" id="inicio">
+      <div class="topbar" aria-label="Informações principais">
+        <div class="container topbar-content">
+          <a class="brand" href="#inicio" aria-label="Eduardo's Auto Elétrico & Mecânica">
+            <span class="brand-icon"><i class="fa-solid fa-car-battery" aria-hidden="true"></i></span>
+            <span>Eduardo's Auto Elétrico & Mecânica</span>
+          </a>
+          <a class="topbar-phone" href="tel:+5511980734554">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            (11) 98073-4554
+          </a>
+        </div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Guarulhos, São Paulo</span>
+          <h1>Seu Carro Parou? A Gente Resolve. Auto Elétrico e Mecânica em Guarulhos.</h1>
+          <p>Diagnóstico preciso, serviço rápido e preço justo. Atendemos todas as marcas.</p>
+          <div class="hero-actions" aria-label="Ações principais">
+            <a class="btn btn-primary" href="#contato"><span aria-hidden="true">🔧</span> SOLICITAR ORÇAMENTO</a>
+            <a class="btn btn-secondary" href="https://wa.me/5511980734554?text=Olá!%20Preciso%20de%20um%20orçamento%20para%20meu%20veículo." target="_blank" rel="noopener"><span aria-hidden="true">📱</span> CHAMAR NO WHATSAPP</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Especialidades da oficina">
+          <h2 class="hero-panel-title">Atendimento técnico para panes e manutenção</h2>
+          <ul class="quick-list">
+            <li><i class="fa-solid fa-microchip" aria-hidden="true"></i> Diagnóstico eletrônico computadorizado</li>
+            <li><i class="fa-solid fa-bolt" aria-hidden="true"></i> Auto elétrico, alternador e partida</li>
+            <li><i class="fa-solid fa-snowflake" aria-hidden="true"></i> Ar condicionado automotivo</li>
+            <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Garantia em todos os serviços</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section services" id="servicos">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Serviços</span>
+            <h2>Auto elétrica e mecânica com diagnóstico certeiro</h2>
+            <p>Resolva falhas elétricas, perda de desempenho, dificuldade de partida e problemas de climatização com uma equipe pronta para atender.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+              <h3>Auto Elétrico</h3>
+              <p>Diagnóstico de panes, revisão de chicotes, iluminação, fusíveis, módulos e reparo elétrico geral.</p>
+              <a class="btn" href="https://wa.me/5511980734554?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20para%20auto%20el%C3%A9trico." target="_blank" rel="noopener">Orçamento</a>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-car-battery" aria-hidden="true"></i></div>
+              <h3>Bateria</h3>
+              <p>Troca, recarga, análise de carga e testes gratuitos para identificar fuga de corrente e vida útil.</p>
+              <a class="btn" href="https://wa.me/5511980734554?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20para%20bateria." target="_blank" rel="noopener">Orçamento</a>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
+              <h3>Motor de Arranque</h3>
+              <p>Reparo e troca do motor de partida para eliminar falhas na hora de ligar o veículo.</p>
+              <a class="btn" href="https://wa.me/5511980734554?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20para%20motor%20de%20arranque." target="_blank" rel="noopener">Orçamento</a>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-rotate" aria-hidden="true"></i></div>
+              <h3>Alternador</h3>
+              <p>Recuperação, substituição e testes do sistema de carga para manter a bateria funcionando bem.</p>
+              <a class="btn" href="https://wa.me/5511980734554?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20para%20alternador." target="_blank" rel="noopener">Orçamento</a>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-regular fa-snowflake" aria-hidden="true"></i></div>
+              <h3>Ar Condicionado</h3>
+              <p>Manutenção, higienização, verificação de vazamentos e recarga do gás do ar condicionado.</p>
+              <a class="btn" href="https://wa.me/5511980734554?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20para%20ar%20condicionado." target="_blank" rel="noopener">Orçamento</a>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></div>
+              <h3>Injeção Eletrônica</h3>
+              <p>Diagnóstico computadorizado para falhas de sensores, consumo alto, luz da injeção e marcha irregular.</p>
+              <a class="btn" href="https://wa.me/5511980734554?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20para%20inje%C3%A7%C3%A3o%20eletr%C3%B4nica." target="_blank" rel="noopener">Orçamento</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="diferenciais">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Por que escolher a gente</span>
+            <h2>Confiança para deixar seu carro em boas mãos</h2>
+          </div>
+
+          <div class="trust-grid">
+            <div class="trust-badge"><i class="fa-solid fa-award" aria-hidden="true"></i><strong>Mais de 10 anos de experiência</strong></div>
+            <div class="trust-badge"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><strong>Orçamento detalhado via WhatsApp</strong></div>
+            <div class="trust-badge"><i class="fa-solid fa-gears" aria-hidden="true"></i><strong>Peças originais e homologadas</strong></div>
+            <div class="trust-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><strong>Garantia em todos os serviços</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section brands" id="marcas">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow"><i class="fa-solid fa-car-side" aria-hidden="true"></i> Marcas atendidas</span>
+            <h2>Atendemos as principais montadoras</h2>
+            <p>Trabalhamos com carros nacionais e importados, sempre com avaliação técnica antes do serviço.</p>
+          </div>
+
+          <div class="brands-grid" aria-label="Lista de marcas atendidas">
+            <div class="brand-logo">Fiat</div>
+            <div class="brand-logo">VW</div>
+            <div class="brand-logo">Chevrolet</div>
+            <div class="brand-logo">Ford</div>
+            <div class="brand-logo">Toyota</div>
+            <div class="brand-logo">Honda</div>
+            <div class="brand-logo">Hyundai</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contato">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow"><i class="fa-solid fa-comments" aria-hidden="true"></i> Contato</span>
+            <h2>Fale agora com a Eduardo's Auto Elétrico & Mecânica</h2>
+            <p>Conte o problema do seu veículo e receba orientação para o próximo passo.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <a class="whatsapp-hero" href="https://wa.me/5511980734554?text=Olá!%20Preciso%20de%20um%20orçamento%20para%20meu%20veículo." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                WhatsApp: (11) 98073-4554
+              </a>
+
+              <ul class="info-list">
+                <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong>Telefone:</strong> (11) 98073-4554</span></li>
+                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Endereço:</strong> Rua Taubaté, 257 - Guarulhos, SP, 07161-180</span></li>
+                <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span><strong>Horário:</strong> Seg-Sex 8h às 18h, Sáb 8h às 14h</span></li>
+              </ul>
+
+              <a class="map-placeholder" href="https://www.google.com/maps/search/?api=1&query=Rua%20Taubat%C3%A9%2C%20257%20-%20Guarulhos%2C%20SP%2C%2007161-180" target="_blank" rel="noopener" aria-label="Abrir endereço no Google Maps">
+                <span>
+                  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i><br />
+                  <strong>Mapa da oficina</strong><br />
+                  Toque para abrir a rota até a Rua Taubaté, 257.
+                </span>
+              </a>
+            </div>
+
+            <form class="contact-form" id="quoteForm">
+              <h3>Solicite seu orçamento</h3>
+              <div class="form-field">
+                <label for="name">Nome</label>
+                <input id="name" name="name" type="text" placeholder="Seu nome" required />
+              </div>
+              <div class="form-field">
+                <label for="phone">Telefone</label>
+                <input id="phone" name="phone" type="tel" placeholder="(11) 99999-9999" required />
+              </div>
+              <div class="form-field">
+                <label for="car">Modelo do carro</label>
+                <input id="car" name="car" type="text" placeholder="Ex.: Gol 1.0 2018" required />
+              </div>
+              <div class="form-field">
+                <label for="problem">Descrição do problema</label>
+                <textarea id="problem" name="problem" placeholder="Descreva os sintomas, luzes no painel ou falhas percebidas" required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Enviar</button>
+              <p class="form-note" id="formNote">O formulário abre o WhatsApp com sua mensagem pronta para envio.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p><strong>© <span id="year"></span> Eduardo's Auto Elétrico & Mecânica.</strong><br />Todos os direitos reservados.</p>
+        <p><strong>WhatsApp e telefone:</strong><br /><a href="tel:+5511980734554">(11) 98073-4554</a></p>
+        <p><strong>Endereço:</strong><br />Rua Taubaté, 257 - Guarulhos, SP, 07161-180</p>
+      </div>
+    </footer>
+
+    <a class="floating-whatsapp" href="https://wa.me/5511980734554?text=Olá!%20Preciso%20de%20um%20orçamento%20para%20meu%20veículo." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <script>
+      const whatsappBaseUrl = "https://wa.me/5511980734554";
+      const defaultMessage = "Olá! Preciso de um orçamento para meu veículo.";
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      document.getElementById("quoteForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const message = [
+          defaultMessage,
+          "",
+          `Nome: ${formData.get("name")}`,
+          `Telefone: ${formData.get("phone")}`,
+          `Modelo do carro: ${formData.get("car")}`,
+          `Problema: ${formData.get("problem")}`
+        ].join("\n");
+
+        const url = `${whatsappBaseUrl}?text=${encodeURIComponent(message)}`;
+        document.getElementById("formNote").textContent = "Abrindo o WhatsApp com seu orçamento...";
+        window.open(url, "_blank", "noopener");
+      });
+    </script>
   </body>
 </html>
-
